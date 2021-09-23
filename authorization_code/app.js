@@ -13,9 +13,9 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'CLIENT_ID'; // Your client id
-var client_secret = 'CLIENT_SECRET'; // Your secret
-var redirect_uri = 'REDIRECT_URI'; // Your redirect uri
+var client_id = '218e2b37438a46b4a772c7e8bd5fc239'; // Your client id
+var client_secret = '2c25c8870e6d4883b58b02ff6fe3b746'; // Your secret
+var redirect_uri = 'https://sweet-stingray-73.loca.lt/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -46,7 +46,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  var scope = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-recently-played user-top-read user-read-playback-position playlist-read-private playlist-read-collaborative streaming';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -104,7 +104,8 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
+        // res.redirect('http://localhost:3000/entry/#' +
+        res.redirect('https://8a6c-69-181-53-72.ngrok.io/entry/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
@@ -143,5 +144,5 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-console.log('Listening on 8888');
+console.log('Spotify auth server listening on 8888');
 app.listen(8888);
