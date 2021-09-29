@@ -144,5 +144,9 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
+app.get('/', (req, res) => {
+  res.status(200).send('Success!');
+});
+
 console.log('Spotify auth server listening on 8888');
 app.listen(8888);
