@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '218e2b37438a46b4a772c7e8bd5fc239'; // Your client id
 var client_secret = '2c25c8870e6d4883b58b02ff6fe3b746'; // Your secret
-var redirect_uri = 'https://sweet-stingray-73.loca.lt/callback'; // Your redirect uri
+var redirect_uri = 'https://przftyvp9d.us-east-2.awsapprunner.com/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -105,7 +105,7 @@ app.get('/callback', function(req, res) {
 
         // we can also pass the token to the browser to make requests from there
         // res.redirect('http://localhost:3000/entry/#' +
-        res.redirect('https://8a6c-69-181-53-72.ngrok.io/entry/#' +
+        res.redirect('https://ijaksa8xum.us-east-2.awsapprunner.com/entry/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
