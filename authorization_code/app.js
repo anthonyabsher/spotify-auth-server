@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '218e2b37438a46b4a772c7e8bd5fc239'; // Your client id
 var client_secret = '2c25c8870e6d4883b58b02ff6fe3b746'; // Your secret
-var redirect_uri = 'https://przftyvp9d.us-east-2.awsapprunner.com/callback'; // Your redirect uri
+var redirect_uri = 'https://ew38pwppbq.us-east-2.awsapprunner.com/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
